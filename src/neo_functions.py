@@ -53,8 +53,8 @@ def get_summary(df: pd.DataFrame) -> pd.DataFrame:
         vel_min      = ('relative_velocity', 'min'),
         vel_median   = ('relative_velocity', 'median'),
         vel_max      = ('relative_velocity', 'max'),
-        h            = ('absolute_magnitude_h', 'first'),
-        diameter     = ('estimated_diameter', 'first'),
+        absolute_magnitude_h   = ('absolute_magnitude_h', 'first'),
+        estimated_diameter     = ('estimated_diameter', 'first'),
         hazardous    = ('is_potentially_hazardous_asteroid', 'first'),
     ).round(2)
     return per_object
