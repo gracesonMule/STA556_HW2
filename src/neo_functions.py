@@ -28,6 +28,10 @@ def filter_by_date(df: pd.DataFrame, start_date: str, end_date: str, data_column
     """
     start_date = datetime.strptime(start_date, "%Y-%m-%d")
     end_date = datetime.strptime(end_date, "%Y-%m-%d")
+
+    if start_date >= end_date:
+        raise ValueError(f"start_date ({start_date}) must not be after end_date ({end_date})")
+
     return df[df[data_column].between(start_date, end_date)]
 
 
@@ -42,10 +46,9 @@ def get_summary(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Pandas Dataframes containing sumamry dataframe for NEOs.
     """
     
-    measurements = ['miss_distance', 'relative_velocity', 'absolute_magnitude_h', 'estimated_diameter']
-    # summary = df[measurements].describe().T
-    # summary = df.groupby('object_id')[measurements].describe()
-    per_object = df.groupby('object_id').agg(
+    ordered = df.sort_values(by=["object_id", "miss_distance"])
+
+    per_object = ordered.groupby('object_id').agg(
         n_approaches = ('miss_distance', 'size'),
         miss_min     = ('miss_distance', 'min'),
         miss_median  = ('miss_distance', 'median'),
@@ -56,7 +59,7 @@ def get_summary(df: pd.DataFrame) -> pd.DataFrame:
         absolute_magnitude_h   = ('absolute_magnitude_h', 'first'),
         estimated_diameter     = ('estimated_diameter', 'first'),
         hazardous    = ('is_potentially_hazardous_asteroid', 'first'),
-    ).round(2)
+    ).round(4)
     return per_object
 
 def summarize_potentialy_hazardous_neos(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
