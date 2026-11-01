@@ -16,9 +16,9 @@ The purpose of this project is to explore and examine NEO data to uncover relati
 
 ### Main Findings
 
-There are far more non-hazardous objects and observations than hazardous objects. There are 41 hazardous observations and 5 hazardous objects copmared to 439 non-hazardous observations and 55 non-hazardous objects. Hazardous NEOs appear to be larger but further to Earth than non-hazardou NEOs. The mean estimated diameter for hazardous NEOs is 0.19 km and is a median 44,023,670.87 km from Earth. In comparison, the mean estimated diameter for non-hazardous NEOs is 0.07 km and is a median 41,372,759.99 km from Earth.
+There are far more non-hazardous objects and observations than hazardous objects. There 5 hazardous objects and 54 non-hazardous objects from 2026-10-21 to 2026-10-28. Hazardous NEOs appear to be larger but further to Earth than non-hazardou NEOs. The mean estimated diameter for hazardous NEOs is 0.1916 km and the median minimum miss distance is 45,093,384.61 km from Earth. In comparison, the mean estimated diameter for non-hazardous NEOs is 0.0719 km and the median minimum miss distance is 42,319,569.76 km from Earth.
 
- The mean diameter for all NEOs is about 0.08 km, this is closer to the mean diameter of the non-hazardous objects. The median miss distance for all NEOs is 45,154,508.84 km which is closer to the median of the hazardous NEOs. The mean diameter of all objects is closer to the mean diameter of the non-hazardous NEOs because the dataset is very unbalanced with 55 out of 60 objects are non-hazardous.
+ The mean diameter for all NEOs is about 0.0820 km, this is closer to the mean diameter of the non-hazardous objects. The median miss distance for all NEOs is 43,622,914.03 km which is between the median minimum miss distance for hazardous and non-hazardous NEOs. The mean diameter of all objects is closer to the mean diameter of the non-hazardous NEOs because the dataset is very unbalanced with 54 out of 59 objects being non-hazardous.
 
  It was also found that the larger the NEO, the brighter the it is and the distribution of NEO relative velocity is positiely skewed.
 
@@ -50,18 +50,18 @@ The resulting dataset containing all NEO observations is named **`neos_df`**.
 
 ## Dataset Structure
 
-`neos_df` contains **7 columns**, **480 rows**, and **no missing values**.
+`neos_df` contains **7 columns**, **59 rows**, and **no missing values**.
 
 ```
  #   Column                             Non-Null Count  Dtype
 ---  ------                             --------------  -----
- 0   Approach Date                      480 non-null    datetime64[us]
- 1   miss_distance                      480 non-null    float64
- 2   relative_velocity                  480 non-null    float64
- 3   object_id                          480 non-null    str
- 4   absolute_magnitude_h               480 non-null    float64
- 5   estimated_diameter                 480 non-null    float64
- 6   is_potentially_hazardous_asteroid  480 non-null    bool
+ 0   Approach Date                      59 non-null    datetime64[us]
+ 1   miss_distance                      59 non-null    float64
+ 2   relative_velocity                  59 non-null    float64
+ 3   object_id                          59 non-null    str
+ 4   absolute_magnitude_h               59 non-null    float64
+ 5   estimated_diameter                 59 non-null    float64
+ 6   is_potentially_hazardous_asteroid  59 non-null    bool
 ```
 
 ## Getting Started
