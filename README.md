@@ -37,7 +37,7 @@ There are far more non-hazardous objects and observations than hazardous objects
 
 ## Data Assembly
 
-The NeoWs csv can be created using one of two files. The first, ```/src/read_data_from_api.ipynb```, requests the data from the api and structures it approapriately for analysis. This file can be execute from the ```/src``` directory using ```python3 read_data_from_api.py```. The second, ```/notebook/load_data.ipynb```, performs the same opperations as ```read_data_from_api.ipynb``` but shows the structure of the raw data from the API.
+The NeoWs csv can be created using one of two files. The first, ```/src/read_data_from_api.py```, requests the data from the api and structures it approapriately for analysis. This file can be execute from the ```/src``` directory using ```python3 read_data_from_api.py```. The second, ```/notebooks/load_data.ipynb```, performs the same opperations as ```read_data_from_api.py``` but shows the structure of the raw data from the API.
 
 The NeoWs response is structured so that every approach date contains the approach data for all objects observed on that day. Because of this nesting, the data is read into **two separate DataFrames** that are then merged on approach date:
 
